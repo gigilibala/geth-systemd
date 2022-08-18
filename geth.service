@@ -1,0 +1,16 @@
+[Unit]
+Description=Ethereum client
+After=network.target
+
+[Service]
+User=geth
+Group=geth
+Type=simple
+ExecStart=/usr/bin/geth
+Environment=HOME=/home/geth
+TimeoutStopSec=60
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
